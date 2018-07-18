@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+dependencies {
+    
+}
+
+jar {
+    baseName = 'starbucks-model'
+    version = project.property("app.version")
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8

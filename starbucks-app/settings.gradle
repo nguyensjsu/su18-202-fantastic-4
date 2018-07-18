@@ -1,0 +1,5 @@
+rootProject.name = 'starbucks-app'
+
+include 'model'
+include 'api'
+include 'service'

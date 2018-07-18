@@ -1,0 +1,36 @@
+buildscript {
+    ext { springBootVersion = '2.0.2.RELEASE' }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+          classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+mainClassName = 'edu.sjsu.starbucks.API'
+
+dependencies {
+    compile project(':model')
+     compile 'org.springframework.boot:spring-boot-starter'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework:spring-webmvc'
+}
+
+bootJar{
+	enabled = false
+}
+jar {
+	enabled = true
+    baseName = 'starbucks-api'
+    version = project.property("app.version")
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
