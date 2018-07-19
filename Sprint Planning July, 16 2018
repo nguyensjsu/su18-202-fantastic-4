@@ -1,0 +1,13 @@
+1. Brainstormed the app idea.
+2. Discussed all potential use cases and updated the backlog items.
+3. Allotted Spike tasks to identify the models and interfaces for each API.
+4. Created GitHub Taskboard to maintain active sprint tasks.
+5. Discussed and finalize basic project design as below
+   * Use Gradle
+   * Set up Sub Gradle project 
+   * Each Gradle subproject is an individual pluggable jar
+   * Identified 3 subproject Model(POJO), Service(REST Interface), API(Business Logic and Service Interfaces)
+6. Anushri to work on Gradle Project Setup
+7. Anu and Saloni to research on EC2 deployment
+8. Hema to research on EKS deployment
+9. Clarify from Professor if Cloud deployments need to be automated
