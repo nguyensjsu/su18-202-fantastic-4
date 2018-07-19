@@ -1,0 +1,5 @@
+## Individual Scrum Updates
+
+### Anushri
+Done: Integrate Database with the project structure, Refactored the project structure to have persistence as a seperate jar.
+To Do: Check if the initial jar works on EC2 and has no issues
