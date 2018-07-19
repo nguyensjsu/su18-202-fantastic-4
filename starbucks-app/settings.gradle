@@ -1,5 +1,5 @@
 rootProject.name = 'starbucks-app'
 
-include 'model'
+include 'persistence'
 include 'api'
 include 'service'

@@ -1,4 +1,4 @@
-package edu.sjsu.starbucks.api.entity;
+package edu.sjsu.starbucks.model;
 
 import java.util.List;
 

@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.sjsu.starbucks.api.request.OrderRequest;
+import edu.sjsu.starbucks.api.response.OrderResponse;
 import edu.sjsu.starbucks.api.service.IStarbucksService;
-import edu.sjsu.starbucks.model.request.OrderRequest;
-import edu.sjsu.starbucks.model.response.OrderResponse;
 
 @RestController
 public class StarbucksAppController {

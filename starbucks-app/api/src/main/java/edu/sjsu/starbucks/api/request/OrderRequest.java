@@ -1,4 +1,4 @@
-package edu.sjsu.starbucks.model.request;
+package edu.sjsu.starbucks.api.request;
 
 import java.io.Serializable;
 import java.util.List;

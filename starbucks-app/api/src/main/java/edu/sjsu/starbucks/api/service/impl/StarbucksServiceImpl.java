@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.sjsu.starbucks.api.dao.OrderDao;
-import edu.sjsu.starbucks.api.entity.Order;
+import edu.sjsu.starbucks.api.request.OrderRequest;
+import edu.sjsu.starbucks.api.response.OrderResponse;
 import edu.sjsu.starbucks.api.service.IStarbucksService;
-import edu.sjsu.starbucks.model.request.OrderRequest;
-import edu.sjsu.starbucks.model.response.OrderResponse;
+import edu.sjsu.starbucks.model.Order;
 
 @Service
 public class StarbucksServiceImpl implements IStarbucksService {

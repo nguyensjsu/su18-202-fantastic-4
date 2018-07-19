@@ -1,7 +1,7 @@
 package edu.sjsu.starbucks.api.service;
 
-import edu.sjsu.starbucks.model.request.OrderRequest;
-import edu.sjsu.starbucks.model.response.OrderResponse;
+import edu.sjsu.starbucks.api.request.OrderRequest;
+import edu.sjsu.starbucks.api.response.OrderResponse;
 
 public interface IStarbucksService {
 
