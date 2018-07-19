@@ -1,0 +1,20 @@
+## Decisions
+1. Evaluated the use of MongoDB and MySQL database for Starbucks app and decided to go ahead with MongoDB. The order structure is not uniform and hence decided on noSQL. Also, the spring framework has good support for the mongo database.
+
+## Individual Scrum Updates
+
+### Anushri
+Done: Setup Initial Project Structure
+To Do: Integrate Database with the project structure
+### Anu
+Doing: 
+1. Evaluating the model for add card API and designing the interfaces.
+2. Learning Spring Boot, Gradle, and MongoDB
+### Hema
+Doing: 
+1. Evaluating the model for payments API and designing the interfaces.
+2. Learning Spring Boot, Gradle, and MongoDB
+### Saloni
+Doing: 
+1. Evaluating the model for authentication API and designing the interfaces.
+2. Learning Spring Boot, Gradle, and MongoDB
