@@ -1,1 +1,5 @@
 ### Anushri
+
+To Do: Check if the initial jar works on EC2 and has no issues. 
+I worked on getting the initial jar working on EC2. I ran into mongodb issues on EC2. 
+Unable to connect to remote db when the jar is deployed on EC2. Working on fixing this issue.
