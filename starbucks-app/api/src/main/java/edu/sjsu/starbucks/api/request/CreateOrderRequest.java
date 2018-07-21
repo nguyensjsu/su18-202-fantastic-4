@@ -5,7 +5,7 @@ import java.util.List;
 
 import edu.sjsu.starbucks.model.common.CoffeeType;
 
-public class OrderRequest implements Serializable {
+public class CreateOrderRequest implements Serializable {
 
 	private static final long serialVersionUID = -5976800150726340250L;
 	private String userName;
