@@ -34,6 +34,11 @@ public class StarbucksAppController {
 		return manageOrderService.createOrder(orderRequest);
 	}
 
+	/**
+	 * Saloni
+	 * @param request
+	 * @return
+	 */
 	@PostMapping("/user")
 	@ResponseBody
 	public UserResponse createUser(@RequestBody  CreateUserRequest request) {
