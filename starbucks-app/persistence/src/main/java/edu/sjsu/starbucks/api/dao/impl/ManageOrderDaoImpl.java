@@ -22,7 +22,7 @@ public class ManageOrderDaoImpl implements ManageOrderDao {
 
 	@Override
 	public Order getOrderByOrderId(String orderId) {
-		Criteria criteria = Criteria.where("").is(orderId);
+		Criteria criteria = Criteria.where("_id").is(orderId);
 		Query query = new Query(criteria);
 		Order order = mongoTemplate.findOne(query, Order.class);
 		return order;

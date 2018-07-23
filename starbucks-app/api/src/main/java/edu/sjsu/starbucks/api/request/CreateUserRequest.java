@@ -2,9 +2,16 @@ package edu.sjsu.starbucks.api.request;
 
 import java.io.Serializable;
 
+/**
+ * Request for Updating Order Status
+ * @author Anushri Srinath Aithal
+ *
+ */
 public class CreateUserRequest implements Serializable {
 
-    private String userName;
+	private static final long serialVersionUID = 1L;
+	
+	private String userName;
     private String password;
 
     public String getUserName() {
