@@ -93,7 +93,7 @@ public class StarbucksAppController {
 		return addcardservice.addCard(addcardrequest);
 	}
 
-	@GetMapping("/cards/username/{userName}")
+	@GetMapping("/card")
 	public CardDetailsResponse GetCards(String userName) {
 		return addcardservice.getCards(userName);
 	}
