@@ -3,3 +3,7 @@
 To Do: Check if the initial jar works on EC2 and has no issues. 
 I worked on getting the initial jar working on EC2. I ran into mongodb issues on EC2. 
 Unable to connect to remote db when the jar is deployed on EC2. Working on fixing this issue.
+
+###Hema
+Done: Learning Spring Boot, Gradle, and MongoDB
+In Progress: Working on design of the model for payments API and designing the interfaces. 
