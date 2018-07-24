@@ -3,3 +3,7 @@
 ### Anushri
 Done: Integrate Database with the project structure, Refactored the project structure to have persistence as a seperate jar.
 To Do: Check if the initial jar works on EC2 and has no issues
+
+###Hema
+Done: Evaluating the model for payments API and designing the interfaces.
+In Progress:  Learning Spring Boot, Gradle, and MongoDB
