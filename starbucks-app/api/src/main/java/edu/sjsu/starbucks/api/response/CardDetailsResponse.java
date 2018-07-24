@@ -29,6 +29,4 @@ public class CardDetailsResponse {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-
-
 }

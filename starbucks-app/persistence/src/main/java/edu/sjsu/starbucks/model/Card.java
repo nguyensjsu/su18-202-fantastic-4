@@ -1,10 +1,7 @@
 package edu.sjsu.starbucks.model;
 
-import edu.sjsu.starbucks.model.common.CoffeeType;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.List;
 
 @Document(collection = "card")
 public class Card {
@@ -55,6 +52,4 @@ public class Card {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-
-
 }

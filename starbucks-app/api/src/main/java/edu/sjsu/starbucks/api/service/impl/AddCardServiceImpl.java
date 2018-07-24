@@ -1,11 +1,11 @@
 package edu.sjsu.starbucks.api.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import edu.sjsu.starbucks.api.dao.AddCardDao;
 import edu.sjsu.starbucks.api.request.AddCardRequest;
 import edu.sjsu.starbucks.api.response.CardDetailsResponse;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.stereotype.Service;
 import edu.sjsu.starbucks.api.service.IAddCardService;
 import edu.sjsu.starbucks.model.Card;
 

@@ -21,18 +21,19 @@ import edu.sjsu.starbucks.api.service.IUserService;
 
 @RestController
 public class StarbucksAppController {
-	
+
 	@Autowired
 	IManageOrderService manageOrderService;
 
 	@Autowired
-	IAddCardService addcardservice;
-
-  @Autowired
 	IUserService userService;
+
+	@Autowired
+	IAddCardService addcardservice;
 
 	/**
 	 * API to Retrieve Order
+	 * 
 	 * @author Anushri Srinath Aithal
 	 * @param orderId
 	 * @return
@@ -42,9 +43,10 @@ public class StarbucksAppController {
 	public OrderResponse getOrderByOrderId(String orderId) {
 		return manageOrderService.getOrderByOrderId(orderId);
 	}
-	
+
 	/**
 	 * API to create Orders
+	 * 
 	 * @author Anushri Srinath Aithal
 	 * @param orderRequest
 	 * @return
@@ -55,21 +57,9 @@ public class StarbucksAppController {
 		return manageOrderService.createOrder(orderRequest);
 	}
 
-
-	@PostMapping("/card")
-	@ResponseBody
-	public CardDetailsResponse AddCard(@RequestBody AddCardRequest addcardrequest){
-		 return addcardservice.addCard(addcardrequest);
-	}
-
-	@GetMapping("/cards/username/{userName}")
-	public CardDetailsResponse GetCards(String userName){
-		return addcardservice.getCards(userName);
-	}
-
-	
 	/**
 	 * API to update order status
+	 * 
 	 * @author Anushri Srinath Aithal
 	 * @param orderRequest
 	 * @return
@@ -82,12 +72,13 @@ public class StarbucksAppController {
 
 	/**
 	 * Saloni
+	 * 
 	 * @param request
 	 * @return
 	 */
 	@PostMapping("/user")
 	@ResponseBody
-	public UserResponse createUser(@RequestBody  CreateUserRequest request) {
+	public UserResponse createUser(@RequestBody CreateUserRequest request) {
 		return userService.createUser(request);
 	}
 
@@ -96,4 +87,14 @@ public class StarbucksAppController {
 		return userService.getUserByEmail(userName);
 	}
 
+	@PostMapping("/card")
+	@ResponseBody
+	public CardDetailsResponse AddCard(@RequestBody AddCardRequest addcardrequest) {
+		return addcardservice.addCard(addcardrequest);
+	}
+
+	@GetMapping("/cards/username/{userName}")
+	public CardDetailsResponse GetCards(String userName) {
+		return addcardservice.getCards(userName);
+	}
 }
