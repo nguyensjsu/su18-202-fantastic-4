@@ -6,6 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import edu.sjsu.starbucks.model.common.CoffeeType;
+import edu.sjsu.starbucks.model.common.OrderStatus;
 
 @Document(collection = "order")
 public class Order {
@@ -14,7 +15,8 @@ public class Order {
 	private String id;
 	private String userName;
 	private List<CoffeeType> coffee;
-	private Double cost;
+	private Double totalAmount;
+	private OrderStatus status;
 
 	public String getId() {
 		return id;
@@ -31,21 +33,29 @@ public class Order {
 	public void setCoffee(List<CoffeeType> coffee) {
 		this.coffee = coffee;
 	}
-
-	public Double getCost() {
-		return cost;
-	}
-
-	public void setCost(Double cost) {
-		this.cost = cost;
-	}
-
+	
 	public String getUserName() {
 		return userName;
 	}
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public Double getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(Double totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+
+	public OrderStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(OrderStatus status) {
+		this.status = status;
 	}
 
 }

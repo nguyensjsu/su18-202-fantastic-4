@@ -20,7 +20,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter'
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework:spring-webmvc'
-	compile 'org.springframework.data:spring-data-mongodb:1.0.0.RELEASE'
+	compile 'org.springframework.data:spring-data-mongodb:2.0.7.RELEASE'
     
 }
 

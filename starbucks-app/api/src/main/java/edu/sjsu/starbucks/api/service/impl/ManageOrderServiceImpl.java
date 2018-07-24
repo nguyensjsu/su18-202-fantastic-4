@@ -1,5 +1,8 @@
 package edu.sjsu.starbucks.api.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,22 +10,41 @@ import org.springframework.stereotype.Service;
 
 import edu.sjsu.starbucks.api.dao.ManageOrderDao;
 import edu.sjsu.starbucks.api.request.CreateOrderRequest;
+import edu.sjsu.starbucks.api.request.UpdateOrderRequest;
 import edu.sjsu.starbucks.api.response.OrderResponse;
+import edu.sjsu.starbucks.api.service.Drinks;
 import edu.sjsu.starbucks.api.service.IManageOrderService;
 import edu.sjsu.starbucks.model.Order;
+import edu.sjsu.starbucks.model.common.CoffeeType;
+import edu.sjsu.starbucks.model.common.OrderStatus;
 
+/**
+ * Implementation of Business Logic for Managing Orders
+ * 
+ * @author Anushri Srinath Aithal
+ *
+ */
 @Service
 public class ManageOrderServiceImpl implements IManageOrderService {
 
 	@Autowired
 	private ManageOrderDao manageOrderDao;
-	
+
 	@Override
 	public OrderResponse getOrderByOrderId(String orderId) {
-		//TODO: fetch order by database
+		Order order = manageOrderDao.getOrderByOrderId(orderId);
+		
+		if(null == order) {
+			throw new NoSuchElementException("Order Not Found");
+		}
+
+		List<Drinks> coffee = getDrinks(order.getCoffee());
+
 		OrderResponse orderResponse = new OrderResponse();
-		orderResponse.setCost(10.0);
 		orderResponse.setOrderId(orderId);
+		orderResponse.setCoffee(coffee);
+		orderResponse.setStatus(order.getStatus());
+		orderResponse.setTotalAmount(order.getTotalAmount());
 		return orderResponse;
 	}
 
@@ -32,15 +54,42 @@ public class ManageOrderServiceImpl implements IManageOrderService {
 		order.setId(generateId());
 		order.setUserName(orderRequest.getUserName());
 		order.setCoffee(orderRequest.getCoffee());
-		order.setCost(10.0); //TODO: use payment API
-		
+		order.setStatus(OrderStatus.CREATED);
+
 		manageOrderDao.saveOrder(order);
-		
+
+		List<Drinks> coffee = getDrinks(order.getCoffee());
 		OrderResponse orderResponse = new OrderResponse();
-		orderResponse.setCoffee(order.getCoffee());
+		orderResponse.setCoffee(coffee);
 		orderResponse.setOrderId(order.getId());
-		orderResponse.setCost(order.getCost());
+		orderResponse.setStatus(order.getStatus());
+		orderResponse.setTotalAmount(order.getTotalAmount());
 		return orderResponse;
+	}
+
+	@Override
+	public List<Drinks> getDrinks(List<CoffeeType> coffee) {
+		List<Drinks> drinks = new ArrayList<>();
+		for (CoffeeType type : coffee) {
+			switch (type) {
+
+			case LATTE:
+				drinks.add(new Latte());
+				break;
+
+			case CAPPUCCINO:
+				drinks.add(new Cappuccino());
+				break;
+
+			case ESPRESSO:
+				drinks.add(new Espresso());
+				break;
+
+			default:
+				break;
+			}
+		}
+		return drinks;
 	}
 
 	private String generateId() {
@@ -49,6 +98,27 @@ public class ManageOrderServiceImpl implements IManageOrderService {
 		generatedId.append(id);
 		generatedId.append(ThreadLocalRandom.current().nextInt(1, 100));
 		return generatedId.toString();
+	}
+
+	@Override
+	public OrderResponse updateOrderStatus(UpdateOrderRequest orderRequest) {
+		Order order = manageOrderDao.getOrderByOrderId(orderRequest.getOrderId());
+		
+		if(null == order) {
+			throw new NoSuchElementException("Order Not Found");
+		}
+		
+		order.setStatus(orderRequest.getStatus());
+		manageOrderDao.saveOrder(order);
+
+		List<Drinks> coffee = getDrinks(order.getCoffee());
+
+		OrderResponse orderResponse = new OrderResponse();
+		orderResponse.setOrderId(orderRequest.getOrderId());
+		orderResponse.setCoffee(coffee);
+		orderResponse.setStatus(order.getStatus());
+		orderResponse.setTotalAmount(order.getTotalAmount());
+		return orderResponse;
 	}
 
 }

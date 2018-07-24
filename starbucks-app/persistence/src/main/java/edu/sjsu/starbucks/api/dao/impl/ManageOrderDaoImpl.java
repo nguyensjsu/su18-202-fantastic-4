@@ -2,6 +2,8 @@ package edu.sjsu.starbucks.api.dao.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import edu.sjsu.starbucks.api.dao.ManageOrderDao;
@@ -18,4 +20,11 @@ public class ManageOrderDaoImpl implements ManageOrderDao {
 		mongoTemplate.save(order);
 	}
 
+	@Override
+	public Order getOrderByOrderId(String orderId) {
+		Criteria criteria = Criteria.where("_id").is(orderId);
+		Query query = new Query(criteria);
+		Order order = mongoTemplate.findOne(query, Order.class);
+		return order;
+	}
 }

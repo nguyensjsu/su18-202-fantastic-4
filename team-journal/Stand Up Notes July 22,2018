@@ -1,0 +1,22 @@
+### Anushri
+
+1. Unblocked Saloni with her environment and build issues
+2. Worked on implementation of create order API
+3. Worked on implementation of get order API
+
+Retrospective
+
+1. Team needs to make better progress with the APIs as integration testing might require more time.
+
+### Anu
+
+### Hema
+1. Worked with Anushri & Anu for understanding order and card balance API.
+2. Worked on the Payment Interface code.
+3. Did ground work on EKS for deployment.
+4. Pushed initial code for peer review.
+
+### Saloni
+1. Worked with Anushri in resolving enivironmental and build issues.
+2. SignUp API tested and completed the implementation. 
+3. Login API is in testing phase.
