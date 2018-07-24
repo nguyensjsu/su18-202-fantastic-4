@@ -11,10 +11,12 @@ Retrospective
 4. Team has a better clarity and are more focussed now.
 
 ### Anu
+1. Groundwork done for the environment and config setup.
+2. API flows discussed.
+3. Code walkthrough on the order API implementation from Anushri helped with understanding the framework.
+4. Started with the implementation of the AddCards API.
 
 ### Hema
-1. Had a code walk through with Anushri/team explaining the project JAR. 
-2. Picked up payment API to work on for the project.
 
 ### Saloni
 1. Worked on the implementation of SignUp API and moved to testing phase.
