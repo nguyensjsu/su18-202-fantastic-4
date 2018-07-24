@@ -10,3 +10,7 @@ Team work in terms of coding and review is going good post the Saturday meeting.
 1. Work towards the completion of the payment API to calculate the order amount.
 2. Look into EKS for deployment to cloud.
 3. Modify the reviewed code based on Peer review.
+
+### Saloni
+1. Login API tested and completed the implementation.
+2. Started looking into AWS Auto Scaled EC2 Cluster with Load Balancer.
