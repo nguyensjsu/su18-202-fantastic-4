@@ -7,3 +7,6 @@ To Do: Check if the initial jar works on EC2 and has no issues
 ###Hema
 Done: Evaluating the model for payments API and designing the interfaces.
 In Progress:  Learning Spring Boot, Gradle, and MongoDB
+
+####Anu
+Worked on the design details for the AddCard APIs.
