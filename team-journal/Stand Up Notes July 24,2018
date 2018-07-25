@@ -1,1 +1,24 @@
 
+##Hema
+
+Done:
+Worked on Payments API and ran into issues.
+Had a call with team to take help to fix it.
+
+To Do: look into AWS ECS to deploy the project jar.
+
+##Anushri
+
+Done: 
+Reviewed Hema's code and suggested changes
+Had call with the team to work on issues and architecture diagram
+
+##Saloni
+
+Done: Minimalistic draft of the architecture diagram
+To Do: Check Draw.io to implement the architecture sketching.
+
+##Anu
+
+Done: Looked into EKS for a potential deployment of jar.
+To Do: Work with Saloni on the architecture diagram
