@@ -14,7 +14,8 @@ Retrospective
 
 
 ### Hema
-
+1. Completed taking docker image of the jar.
+2. Working on the deployment of this jar to ECS.
 
 ### Saloni
 1. Tried deploying jar file using Elastic Beanstalk but was not succesful so worked with Anushri for manual EC2 deployment 
