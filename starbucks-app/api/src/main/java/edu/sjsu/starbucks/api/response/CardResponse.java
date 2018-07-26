@@ -1,13 +1,15 @@
-package edu.sjsu.starbucks.api.request;
+package edu.sjsu.starbucks.api.response;
 
 import java.io.Serializable;
 
-public class ReloadCardRequest implements Serializable{
+import edu.sjsu.starbucks.model.common.CardStatus;
 
-    private static final long serialVersionUID = 8622026269456873662L;
+public class CardResponse implements Serializable {
+
+    private static final long serialVersionUID = -4654493234073518450L;
     private long cardNumber;
     private double balance;
-    private String userName;
+    private CardStatus status;
 
     public long getCardNumber() {
         return cardNumber;
@@ -25,11 +27,12 @@ public class ReloadCardRequest implements Serializable{
         this.balance = balance;
     }
 
-    public String getUserName() {
-        return userName;
+    public CardStatus getStatus() {
+        return status;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setStatus(CardStatus status) {
+        this.status = status;
     }
+
 }

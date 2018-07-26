@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class AddCardRequest implements Serializable {
 
-	private static final long serialVersionUID = 6401765435392998104L;
-	private long cardNumber;
+    private static final long serialVersionUID = 6401765435392998104L;
+    private long cardNumber;
     private int cvv;
     private double balance;
 

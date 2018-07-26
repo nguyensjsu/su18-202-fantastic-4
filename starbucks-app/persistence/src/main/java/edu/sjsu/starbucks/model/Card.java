@@ -3,10 +3,17 @@ package edu.sjsu.starbucks.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import edu.sjsu.starbucks.model.common.CardStatus;
+
 @Document(collection = "card")
 public class Card {
     @Id
     private String id;
+    private String userName;
+    private long cardNumber;
+    private int cvv;
+    private double balance;
+    private CardStatus status;
 
     public String getUserName() {
         return userName;
@@ -15,11 +22,6 @@ public class Card {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
-    private String userName;
-    private long cardNumber;
-    private int cvv;
-    private double balance;
 
     public String getId() {
         return id;
@@ -52,4 +54,13 @@ public class Card {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+
+    public CardStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(CardStatus status) {
+        this.status = status;
+    }
+
 }

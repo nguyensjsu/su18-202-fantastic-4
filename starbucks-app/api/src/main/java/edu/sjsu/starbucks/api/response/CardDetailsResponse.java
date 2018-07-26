@@ -1,32 +1,24 @@
 package edu.sjsu.starbucks.api.response;
 
-public class CardDetailsResponse {
+import java.io.Serializable;
+import java.util.List;
 
-    private long cardNumber;
-    private double balance;
+public class CardDetailsResponse implements Serializable {
+
+    private static final long serialVersionUID = 7771908766675379676L;
     private String userName;
+    List<CardResponse> cards;
 
     public String getUserName() {
         return userName;
     }
-
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
-    public long getCardNumber() {
-        return cardNumber;
+    public List<CardResponse> getCards() {
+        return cards;
     }
-
-    public void setCardNumber(long cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public void setCards(List<CardResponse> cards) {
+        this.cards = cards;
     }
 }
