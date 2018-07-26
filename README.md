@@ -9,3 +9,6 @@ Initial Draft of Architecture Diagram
 
 ![alt text](https://s3-us-west-1.amazonaws.com/cloudimages2018/Component+Diagram+Starbucks+App.png)
 
+Updated Architecture Diagram
+
+![alt text](https://s3-us-west-1.amazonaws.com/cloudimages2018/Architecture+Diagram.png)
