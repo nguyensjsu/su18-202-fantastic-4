@@ -1,0 +1,27 @@
+### Anushri
+
+1. Worked on code review and suggested Anu and Hema to make some changes to their APIs
+2. Worked with Saloni on EC2 deployment story.
+
+Retrospective
+1. We are in good shape for Saturday demo
+2. Team progress has been good over the week and constantly communicated blockers and set up immediate zoom meetings
+3. Peer programming via zoom helped in resolving many issues.
+
+
+### Anu
+
+
+
+### Hema
+1. Completed taking docker image of the jar.
+2. Working on the deployment of this jar to ECS.
+
+### Saloni
+1. Tried deploying jar file using Elastic Beanstalk but was not succesful so worked with Anushri for manual EC2 deployment 
+   and then configuring AutoScaling group and Elastic Load Balancer for it.
+2. Working on the redesign of Architetcure Diagram with Anu.
+
+Retrospective
+1. We had zoom call discussed various blockers and tried resolving majority of them.
+2. I got a clearer picture on EC2 deployment and configuring AutoScaling group and Elastic Load Balancer.
