@@ -10,6 +10,8 @@ In progress: Changes to the ReloadCard and AddCard APIs
 
 
 ### Hema
+1. Completed taking docker image of the jar. 
+2. Working on the deployment of the same image on ECS.
 
 
 ### Saloni
