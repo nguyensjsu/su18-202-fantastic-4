@@ -16,4 +16,4 @@
 
 Retrospective
 1. We had zoom call discussed various blockers and tried resolving majority of them.
-
+2. I got a clearer picture on EC2 deployment and configuring AutoScaling group and Elastic Load Balancer.
