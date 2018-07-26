@@ -1,0 +1,19 @@
+### Anushri
+
+
+
+### Anu
+
+
+
+### Hema
+
+
+### Saloni
+1. Tried deploying jar file using Elastic Beanstalk but was not succesful so worked with Anushri for manual EC2 deployment 
+   and then configuring AutoScaling group and Elastic Load Balancer for it.
+2. Working on the redesign of Architetcure Diagram with Anu.
+
+Retrospective
+1. We had zoom call discussed various blockers and tried resolving majority of them.
+
