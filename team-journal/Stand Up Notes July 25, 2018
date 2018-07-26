@@ -1,21 +1,16 @@
 ### Anushri
 
-1. Worked on code review and suggested Anu and Hema to make some changes to their APIs
-2. Worked with Saloni on EC2 deployment story.
-
-Retrospective
-1. We are in good shape for Saturday demo
-2. Team progress has been good over the week and constantly communicated blockers and set up immediate zoom meetings
-3. Peer programming via zoom helped in resolving many issues.
 
 
 ### Anu
+1. Implemented the ReloadCard API.
+2. Discussed the changes required for the ReloadCard API.
 
+In progress: Changes to the ReloadCard and AddCard APIs
 
 
 ### Hema
-1. Completed taking docker image of the jar.
-2. Working on the deployment of this jar to ECS.
+
 
 ### Saloni
 1. Tried deploying jar file using Elastic Beanstalk but was not succesful so worked with Anushri for manual EC2 deployment 
