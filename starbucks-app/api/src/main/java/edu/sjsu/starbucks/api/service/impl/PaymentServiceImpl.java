@@ -58,6 +58,10 @@ public class PaymentServiceImpl implements IPaymentService {
 	public PaymentResponse makePayment(String orderId) throws InvalidActivityException {
 		PaymentResponse response = new PaymentResponse();
 		Order order = manageOrderDao.getOrderByOrderId(orderId);
+		
+		if(OrderStatus.DELIVERED.equals(order.getStatus()) || OrderStatus.PAID.equals(order.getStatus()) || OrderStatus.CANCELLED.equals(order.getStatus())) {
+			throw new InvalidActivityException("Order in invalid status");
+		}
 
 		List<Card> cards = addcardDao.getCards(order.getUserName());
 

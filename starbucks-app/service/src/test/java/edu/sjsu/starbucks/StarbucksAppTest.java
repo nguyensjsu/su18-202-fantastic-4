@@ -1,10 +1,13 @@
 package edu.sjsu.starbucks;
 
+import static org.junit.Assert.assertNotEquals;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.activity.InvalidActivityException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,9 +21,11 @@ import edu.sjsu.starbucks.api.request.ReloadCardRequest;
 import edu.sjsu.starbucks.api.response.CardDetailsResponse;
 import edu.sjsu.starbucks.api.response.CardResponse;
 import edu.sjsu.starbucks.api.response.OrderResponse;
+import edu.sjsu.starbucks.api.response.PaymentResponse;
 import edu.sjsu.starbucks.api.response.UserResponse;
 import edu.sjsu.starbucks.api.service.IAddCardService;
 import edu.sjsu.starbucks.api.service.IManageOrderService;
+import edu.sjsu.starbucks.api.service.IPaymentService;
 import edu.sjsu.starbucks.api.service.IUserService;
 import edu.sjsu.starbucks.model.common.CoffeeType;
 import edu.sjsu.starbucks.model.common.OrderStatus;
@@ -36,6 +41,9 @@ public class StarbucksAppTest extends AbstractTestNGSpringContextTests {
 
 	@Autowired
 	IAddCardService addcardservice;
+	
+	@Autowired
+	private IPaymentService paymentService;
 	
 	@Test
 	public void createUserTest() {
@@ -63,11 +71,11 @@ public class StarbucksAppTest extends AbstractTestNGSpringContextTests {
 	}
 	
 	@Test(priority=1)
-	public void addCardSuccess() {
+	public void addCardSuccess() throws IllegalAccessException {
 		AddCardRequest request = new AddCardRequest();
 		request.setUserName("testUser");
-		request.setCardNumber("9611317679");
-		request.setCvv(823);
+		request.setCardNumber("961131767");
+		request.setCvv("823");
 		
 		CardDetailsResponse response = addcardservice.addCard(request);
 		assertNotNull(response.getCards());
@@ -81,19 +89,19 @@ public class StarbucksAppTest extends AbstractTestNGSpringContextTests {
 		
 		CardDetailsResponse cardResp = addcardservice.getCards("testUser");
 		for(CardResponse dbCard : cardResp.getCards()) {
-			if("9611317679".equals(dbCard.getCardNumber())) {
+			if("961131767".equals(dbCard.getCardNumber())) {
 				oldBalance = dbCard.getBalance() + 20.0;
 				break;
 			}
 		}
 		ReloadCardRequest request = new ReloadCardRequest();
-		request.setCardNumber("9611317679");
+		request.setCardNumber("961131767");
 		request.setBalance(20.0);
 		request.setUserName("testUser");
 		
 		CardDetailsResponse response = addcardservice.reloadCard(request);
 		for(CardResponse dbCard : response.getCards()) {
-			if("9611317679".equals(dbCard.getCardNumber())) {
+			if("961131767".equals(dbCard.getCardNumber())) {
 				newBalance = dbCard.getBalance();
 				break;
 			}
@@ -110,12 +118,27 @@ public class StarbucksAppTest extends AbstractTestNGSpringContextTests {
 		coffee.add(CoffeeType.LATTE);
 		request.setCoffee(coffee);
 		
-		//OrderResponse response = manageOrderService.createOrder(request);
-		//assertEquals(response.getStatus(), OrderStatus.CREATED);
+		OrderResponse response = manageOrderService.createOrder(request);
+		
+		OrderResponse paymentResponse = paymentService.calculateOrderAmount(response.getOrderId());
+		assertNotEquals(paymentResponse.getTotalAmount(), 0.0);
 	}
 	
 	@Test(priority=5)
-	public void makePaymentSuccess() {
+	public void makePaymentSuccess() throws InvalidActivityException {
+		CreateOrderRequest request = new CreateOrderRequest();
+		request.setUserName("testUser");
+		
+		List<CoffeeType> coffee = new ArrayList<>();
+		coffee.add(CoffeeType.LATTE);
+		request.setCoffee(coffee);
+		
+		OrderResponse response = manageOrderService.createOrder(request);
+		
+		paymentService.calculateOrderAmount(response.getOrderId());
+		
+		PaymentResponse paymentResp = paymentService.makePayment(response.getOrderId());
+		assertEquals(paymentResp.getStatus(), OrderStatus.PAID);
 		
 	}
 }

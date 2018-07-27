@@ -16,6 +16,10 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public UserResponse createUser(CreateUserRequest request) {
+    	User existingUser = userDao.getUserByEmailId(request.getUserName());
+    	if(existingUser != null) {
+    		throw new IllegalArgumentException("UserAlreadyExists");
+    	}
         User user = new User();
         user.setUserName(request.getUserName());
         user.setPassword(request.getPassword());

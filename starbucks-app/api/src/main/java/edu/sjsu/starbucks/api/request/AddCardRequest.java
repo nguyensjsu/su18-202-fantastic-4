@@ -6,7 +6,7 @@ public class AddCardRequest implements Serializable {
 
     private static final long serialVersionUID = 6401765435392998104L;
     private String cardNumber;
-    private int cvv;
+    private String cvv;
     private double balance;
 
     private String userName;
@@ -27,11 +27,11 @@ public class AddCardRequest implements Serializable {
         this.cardNumber = cardNumber;
     }
 
-    public int getCvv() {
+    public String getCvv() {
         return cvv;
     }
 
-    public void setCvv(int cvv) {
+    public void setCvv(String cvv) {
         this.cvv = cvv;
     }
 

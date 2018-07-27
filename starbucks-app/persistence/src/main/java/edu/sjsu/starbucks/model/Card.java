@@ -11,7 +11,7 @@ public class Card {
     private String id;
     private String userName;
     private String cardNumber;
-    private int cvv;
+    private String cvv;
     private double balance;
     private CardStatus status;
 
@@ -39,11 +39,11 @@ public class Card {
         this.cardNumber = cardNumber;
     }
 
-    public int getCvv() {
+    public String getCvv() {
         return cvv;
     }
 
-    public void setCvv(int cvv) {
+    public void setCvv(String cvv) {
         this.cvv = cvv;
     }
 

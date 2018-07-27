@@ -8,7 +8,7 @@ public interface IAddCardService {
 
     public CardDetailsResponse getCards(String userName);
 
-    public CardDetailsResponse addCard(AddCardRequest addcardrequest);
+    public CardDetailsResponse addCard(AddCardRequest addcardrequest) throws IllegalAccessException;
 
     public CardDetailsResponse reloadCard(ReloadCardRequest reloadcardrequest);
 

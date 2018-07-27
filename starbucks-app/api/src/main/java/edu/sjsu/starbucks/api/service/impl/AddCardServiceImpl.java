@@ -23,7 +23,11 @@ public class AddCardServiceImpl implements IAddCardService {
     private AddCardDao addcardDao;
 
     @Override
-    public CardDetailsResponse addCard(AddCardRequest addcardrequest) {
+    public CardDetailsResponse addCard(AddCardRequest addcardrequest) throws IllegalAccessException {
+    	
+    	if(addcardrequest.getCardNumber().length() != 9 || addcardrequest.getCvv().length() != 3) {
+    		throw new IllegalAccessException("Card number or CVV of invalid length");
+    	}
         List<Card> updatedList = new ArrayList<>();
         boolean cardExist = false;
 
@@ -99,7 +103,7 @@ public class AddCardServiceImpl implements IAddCardService {
         List<Card> cards = addcardDao.getCards(reloadcardrequest.getUserName());
         if (!CollectionUtils.isEmpty(cards)) {
             for (Card dbCard : cards) {
-                if (dbCard.getCardNumber() == reloadcardrequest.getCardNumber()) {
+                if (dbCard.getCardNumber().equals(reloadcardrequest.getCardNumber())) {
                     dbCard.setStatus(CardStatus.ACTIVE);
                     dbCard.setBalance(dbCard.getBalance() + reloadcardrequest.getBalance());
                 } else {
