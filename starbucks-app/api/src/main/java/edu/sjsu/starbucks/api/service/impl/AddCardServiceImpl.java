@@ -30,7 +30,7 @@ public class AddCardServiceImpl implements IAddCardService {
         List<Card> cards = addcardDao.getCards(addcardrequest.getUserName());
         if (!CollectionUtils.isEmpty(cards)) {
             for (Card dbCard : cards) {
-                if (dbCard.getCardNumber() == addcardrequest.getCardNumber()) {
+                if (dbCard.getCardNumber().equals(addcardrequest.getCardNumber())) {
                     cardExist = true;
                     dbCard.setStatus(CardStatus.ACTIVE);
                     dbCard.setBalance(20.0);

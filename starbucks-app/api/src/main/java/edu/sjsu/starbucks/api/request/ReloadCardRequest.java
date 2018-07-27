@@ -5,15 +5,15 @@ import java.io.Serializable;
 public class ReloadCardRequest implements Serializable{
 
     private static final long serialVersionUID = 8622026269456873662L;
-    private long cardNumber;
+    private String cardNumber;
     private double balance;
     private String userName;
 
-    public long getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(long cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 

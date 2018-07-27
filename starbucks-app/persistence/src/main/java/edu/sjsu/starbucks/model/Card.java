@@ -10,7 +10,7 @@ public class Card {
     @Id
     private String id;
     private String userName;
-    private long cardNumber;
+    private String cardNumber;
     private int cvv;
     private double balance;
     private CardStatus status;
@@ -31,11 +31,11 @@ public class Card {
         this.id = id;
     }
 
-    public long getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(long cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 

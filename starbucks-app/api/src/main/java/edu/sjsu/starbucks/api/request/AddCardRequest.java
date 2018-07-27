@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class AddCardRequest implements Serializable {
 
     private static final long serialVersionUID = 6401765435392998104L;
-    private long cardNumber;
+    private String cardNumber;
     private int cvv;
     private double balance;
 
@@ -19,11 +19,11 @@ public class AddCardRequest implements Serializable {
         this.userName = userName;
     }
 
-    public long getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(long cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 

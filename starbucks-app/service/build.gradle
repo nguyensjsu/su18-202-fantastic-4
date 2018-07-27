@@ -25,6 +25,9 @@ dependencies {
     compile 'org.springframework:spring-webmvc'
     
     runtime('org.springframework.boot:spring-boot-starter-logging')
+    
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'org.testng:testng:6.14.3'
 }
 
 jar {
