@@ -1,5 +1,7 @@
 package edu.sjsu.starbucks.controller;
 
+import javax.activity.InvalidActivityException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,26 +17,31 @@ import edu.sjsu.starbucks.api.request.ReloadCardRequest;
 import edu.sjsu.starbucks.api.request.UpdateOrderRequest;
 import edu.sjsu.starbucks.api.response.CardDetailsResponse;
 import edu.sjsu.starbucks.api.response.OrderResponse;
+import edu.sjsu.starbucks.api.response.PaymentResponse;
 import edu.sjsu.starbucks.api.response.UserResponse;
 import edu.sjsu.starbucks.api.service.IAddCardService;
 import edu.sjsu.starbucks.api.service.IManageOrderService;
+import edu.sjsu.starbucks.api.service.IPaymentService;
 import edu.sjsu.starbucks.api.service.IUserService;
 
 @RestController
 public class StarbucksAppController {
 
 	@Autowired
-	IManageOrderService manageOrderService;
+	private IManageOrderService manageOrderService;
 
 	@Autowired
-	IUserService userService;
+	private IUserService userService;
 
 	@Autowired
-	IAddCardService addcardservice;
+	private IAddCardService addcardservice;
+	
+	@Autowired
+	private IPaymentService paymentService;
 
 	/**
 	 * API to Retrieve Order
-	 *
+	 * 
 	 * @author Anushri Srinath Aithal
 	 * @param orderId
 	 * @return
@@ -47,7 +54,7 @@ public class StarbucksAppController {
 
 	/**
 	 * API to create Orders
-	 *
+	 * 
 	 * @author Anushri Srinath Aithal
 	 * @param orderRequest
 	 * @return
@@ -60,7 +67,7 @@ public class StarbucksAppController {
 
 	/**
 	 * API to update order status
-	 *
+	 * 
 	 * @author Anushri Srinath Aithal
 	 * @param orderRequest
 	 * @return
@@ -73,7 +80,7 @@ public class StarbucksAppController {
 
 	/**
 	 * Saloni
-	 *
+	 * 
 	 * @param request
 	 * @return
 	 */
@@ -116,5 +123,16 @@ public class StarbucksAppController {
 	@ResponseBody
 	public CardDetailsResponse reloadCard(@RequestBody ReloadCardRequest reloadcardrequest){
 		return addcardservice.reloadCard(reloadcardrequest);
+	}
+	
+	@GetMapping("/payment")
+	public OrderResponse calculateCost(String orderId) {
+		return paymentService.calculateOrderAmount(orderId);
+	}
+	
+	@PostMapping("/payment")
+	@ResponseBody
+	public PaymentResponse makePayment(@RequestBody String orderId) throws InvalidActivityException {
+		return paymentService.makePayment(orderId);
 	}
 }
