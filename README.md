@@ -27,10 +27,10 @@ Anu Sebastian (012496276)
 Hemambujam Veeraraghavan (012482392)
 Saloni Sharad Bhalerao (012466623)
 
-GitHub Repo	https://github.com/nguyensjsu/su18-202-fantastic-4
-Project Board	https://github.com/nguyensjsu/su18-202-fantastic-4/projects/1
-Project Journal	https://github.com/nguyensjsu/su18-202-fantastic-4/tree/master/team-journal
-Sprint Task Sheet https://docs.google.com/spreadsheets/d/1oJ-Mk4yIKfhXTutCxDLwAGS3t0IP6c7CpRegFZECa_8/edit?ts=5b54d268#gid=1004945973
+- GitHub Repo	https://github.com/nguyensjsu/su18-202-fantastic-4
+- Project Board	https://github.com/nguyensjsu/su18-202-fantastic-4/projects/1
+- Project Journal	https://github.com/nguyensjsu/su18-202-fantastic-4/tree/master/team-journal
+- Sprint Task Sheet https://docs.google.com/spreadsheets/d/1oJ-Mk4yIKfhXTutCxDLwAGS3t0IP6c7CpRegFZECa_8/edit?ts=5b54d268#gid=1004945973
 
 ### Team Member-Contributions
 - Project Design and Setup	Anushri Srinath Aithal
