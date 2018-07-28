@@ -10,6 +10,10 @@
 2. The Business/API JAR has the actual implementation of the functionality for Create Users, Add and Reload Card, Manage Orders, Manage Payment.
 3. Persistence JAR has the database models. These entities represent real world entity like User, Card and Order. MongoDB is used as the database and connections are achieved using Spring Mongo Data.
 
+### Cloud deployment
+- Deployment on EC2, AutoScale Group and ELB
+- Deployment on GKE
+
 Initial Draft of Architecture Diagram
 
 ![alt text](https://s3-us-west-1.amazonaws.com/cloudimages2018/Component+Diagram+Starbucks+App.png)
@@ -31,6 +35,7 @@ Saloni Sharad Bhalerao (012466623)
 - Project Board	https://github.com/nguyensjsu/su18-202-fantastic-4/projects/1
 - Project Journal	https://github.com/nguyensjsu/su18-202-fantastic-4/tree/master/team-journal
 - Sprint Task Sheet https://docs.google.com/spreadsheets/d/1oJ-Mk4yIKfhXTutCxDLwAGS3t0IP6c7CpRegFZECa_8/edit?ts=5b54d268#gid=1004945973
+- Presentation Slide Deck https://docs.google.com/presentation/d/1n_kTZboKZRLarsREojL558hVtR5Rwe3Twpki_T8FKEs/edit?usp=sharing
 
 ### Team Member-Contributions
 - Project Design and Setup	Anushri Srinath Aithal
